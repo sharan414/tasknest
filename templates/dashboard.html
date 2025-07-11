@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - TaskNest</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <nav class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">📆 TaskNest Dashboard</h1>
+    <a href="/logout" class="text-sm bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">Logout</a>
+  </nav>
+
+  <main class="p-4 space-y-6">
+    <form method="POST" action="/add" class="bg-white p-4 rounded-lg shadow-md grid gap-4 md:grid-cols-2 lg:grid-cols-3" data-aos="fade-up">
+      <input name="title" type="text" placeholder="Title" required class="p-2 border rounded">
+      <input name="description" type="text" placeholder="Description" required class="p-2 border rounded">
+      <input name="deadline" type="date" required class="p-2 border rounded">
+      <select name="priority" class="p-2 border rounded">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <button type="submit" class="col-span-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Add Task</button>
+    </form>
+
+    <section class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {% for task in tasks %}
+      <div class="bg-white rounded-xl p-4 shadow-md border-l-4 border-blue-400" data-aos="zoom-in">
+        <h3 class="text-lg font-semibold">{{ task.title }}</h3>
+        <p class="text-sm text-gray-600">{{ task.description }}</p>
+        <p class="text-sm text-gray-500">Deadline: {{ task.deadline }}</p>
+        <p class="text-sm text-gray-500">Priority: {{ task.priority }}</p>
+       <form action="/delete/{{ task.id }}" method="POST">
+         <button class="text-red-600 hover:underline text-sm">Delete</button>
+        </form>
+
+
+      </div>
+      {% endfor %}
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>

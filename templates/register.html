@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - TaskNest</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-green-200 to-blue-100 min-h-screen flex items-center justify-center">
+  <div data-aos="zoom-in-up" class="bg-white p-6 rounded-2xl shadow-2xl max-w-md w-full">
+    <h2 class="text-2xl font-bold mb-6 text-center">📝 Register for TaskNest</h2>
+    <form method="POST" action="/register" class="space-y-4">
+      <input type="text" name="username" placeholder="Username" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-green-500" required>
+      <input type="password" name="password" placeholder="Password" class="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-green-500" required>
+      <button type="submit" class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition">Register</button>
+    </form>
+    <p class="text-center text-sm mt-4">Already have an account? <a href="/login" class="text-green-600">Login</a></p>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
