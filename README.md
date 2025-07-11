@@ -18,19 +18,21 @@ TaskNest is a modern, mobile-friendly full-stack to-do app built with **Flask**,
 
 ### 📸 Screenshots
 
-### 🏠 Home Page
-![Home](task_home.png)
+## 📸 Screenshots
 
-### 🔐 Login Page
-![Login](task_login.png)
+### 🏠 Home Page  
+![Home](task%20home.png)
 
-### 🧾 Register Page
-![Register](task_register.png)
+### 🔐 Login Page  
+![Login](task%20login.png)
 
-### 📋 Dashboard
+### 📝 Register Page  
+![Register](task%20register.png)
+
+### 📋 Dashboard  
 ![Dashboard](dashboard.png)
 
-###  DB Overview
+## 🛢️ DB Overview  
 ![Database](database.png)
 
 
